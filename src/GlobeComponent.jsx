@@ -32,7 +32,7 @@ export default function GlobeComponent({ onCountrySelect, isDay }) {
     polygonsData={countries}
     polygonAltitude={({ properties: d }) => (d === hoverD ? 0.06 : 0.01)}
     polygonCapColor={({ properties: d }) =>
-      d === hoverD ? 'rgba(4, 0, 255, 0.46)' : 'rgba(200, 200, 255, 0)'
+      d === hoverD ? 'rgba(255, 187, 0, 0.46)' : 'rgba(200, 200, 255, 0)'
     }
     polygonSideColor={() => 'rgba(79, 93, 114, 0.15)'}
     polygonStrokeColor={() => '#111'}

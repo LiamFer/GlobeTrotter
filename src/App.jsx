@@ -17,28 +17,41 @@ export default function App() {
   };
 
   return (
-    <div style={{ height: "100vh", width: "100vw", overflow: "hidden", margin: 0, padding: 0 }}>
-      <h1
+    <div
+      style={{
+        height: "100vh",
+        width: "100vw",
+        overflow: "hidden",
+        margin: 0,
+        padding: 0,
+      }}
+    >
+      <div
         style={{
           position: "absolute",
           top: "20px",
           left: "50%",
           transform: "translateX(-50%)",
           color: "white",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "20px",
           zIndex: 1,
-          fontSize: "2rem",
           textShadow: "0 0 10px rgba(0,0,0,0.7)",
         }}
       >
-        {countryInfo.name.common}
-      </h1>
+        <Avatar src={countryInfo?.flags?.png} />
+        <h1>{countryInfo.name.common}</h1>
+      </div>
       <FloatButton
         icon={lightMode ? <FaMoon /> : <FaSun />}
+        tooltip="Change Earth Theme"
         onClick={() => setLightmode((prev) => !prev)}
       />
       <GlobeComponent onCountrySelect={handleCountrySelect} isDay={lightMode} />
       <Card
-        title={<Avatar src={countryInfo?.flags?.png}/>}
+        title={"Country Information"}
         style={{
           position: "absolute",
           top: "20px",
@@ -52,13 +65,6 @@ export default function App() {
       >
         <p>Capital: {countryInfo.capital}</p>
         <p>População: {countryInfo.population?.toLocaleString()}</p>
-        <p>Região: {countryInfo.region}</p>
-        <p>Região: {countryInfo.region}</p>
-        <p>Região: {countryInfo.region}</p>
-        <p>Região: {countryInfo.region}</p>
-        <p>Região: {countryInfo.region}</p>
-        <p>Região: {countryInfo.region}</p>
-        <p>Região: {countryInfo.region}</p>
         <p>Região: {countryInfo.region}</p>
       </Card>
     </div>
